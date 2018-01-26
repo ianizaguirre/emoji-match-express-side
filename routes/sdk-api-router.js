@@ -10,10 +10,13 @@ router.post('/fetch-emotion', (req, res) => {
 
 	var options = {
 	      method: 'post',
-	      body: mockImage,
+
+	      body:  {
+	      					image: req.body.image
+	      			 },
+
 	      json: true,
 	      url: 'https://8agk07z9h1.execute-api.us-east-1.amazonaws.com/prod/api/public/emotions'
-	      // 'https://refineai-sdk.herokuapp.com/getReport'
 	  };
 
 	  request(options, function (error, httpResponse, body) {
